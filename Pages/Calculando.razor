@@ -1,0 +1,61 @@
+﻿@page "/calculando"
+<h3>Calculando</h3>
+
+
+<form>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-2">
+                <label>Primer Numero:</label>
+            </div>
+            <div class="col-10">
+                <input type="number" id="primerNumeroInput" class="form-control" @bind-value="primernumero" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-2">
+                <label>Segundo Numero:</label>
+            </div>
+            <div class="col-10">
+                <input type="number" id="segundoNumeroInput" class="form-control" @bind-value="segundonumero" />
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    <div class="form-group">
+        <p> La Suma es: @suma</p>
+        <p> La Resta es: @resta</p>
+        <p> La Multiplicacion es: @multiplicacion</p>
+        <p> La Division es: @division</p>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success" type="button" @onclick="Calcular">Calcular</button>
+    </div>
+</form>
+
+
+
+@code {
+
+    private int primernumero=0;
+    private int segundonumero=0;
+    private int resultado = 0;
+    private int multiplicacion;
+    private int suma;
+    private int resta;
+    private int division;
+
+    public void Calcular()
+    {
+        suma = primernumero + segundonumero;
+        resta= primernumero - segundonumero;
+        multiplicacion= primernumero * segundonumero; ;
+        division= primernumero / segundonumero;
+        
+    }
+
+}
